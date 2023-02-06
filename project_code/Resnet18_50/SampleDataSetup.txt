@@ -1,0 +1,36 @@
+TSRC_1="/content/drive/MyDrive/DataSet/KImages/data/kitti/train/2011_09_26_drive_0001_sync"
+TSRC_2="/content/drive/MyDrive/DataSet/KImages/data/kitti/val/2011_09_26_drive_0020_sync"
+
+TDEST="/content/data/kitti/train/2011_09_26_drive_0001_sync"
+VDEST="/content/data/kitti/val/2011_09_26_drive_0020_sync"
+
+!mkdir -p $TDEST/image_02/data/  $VDEST/image_02/data/
+!mkdir -p $TDEST/image_03/data/  $VDEST/image_03/data/
+!mkdir -p data/test/left/image_02/data  #Testing
+
+!ls -l $TSRC_1/image_03/data/*.png | wc -l 
+!ls -l $TSRC_2/image_02/data/*.png | wc -l
+!echo "----------------------------------------------------------"
+!echo "Training"
+!cp $TSRC_1/image_02/data/*0[0-7][0-9].png $TDEST/image_02/data/
+!cp $TSRC_1/image_03/data/*0[0-7][0-9].png $TDEST/image_03/data/
+!cp $TSRC_2/image_02/data/*[0-5][0-9].png  $TDEST/image_02/data/
+!cp $TSRC_2/image_03/data/*[0-5][0-9].png  $TDEST/image_03/data/
+!ls -l $TDEST/image_02/data/*.png | wc -l
+!ls -l $TDEST/image_03/data/*.png | wc -l
+
+!echo "----------------------------------------------------------"
+!echo "Validation"
+!cp $TSRC_1/image_02/data/*08[0-9].png $VDEST/image_02/data/
+!cp $TSRC_1/image_03/data/*08[0-9].png $VDEST/image_03/data/
+!cp $TSRC_2/image_02/data/*06[0-9].png $VDEST/image_02/data/
+!cp $TSRC_2/image_03/data/*06[0-9].png $VDEST/image_03/data/
+!ls -l $VDEST/image_02/data/*.png | wc -l
+!ls -l $VDEST/image_03/data/*.png | wc -l
+
+!echo "----------------------------------------------------------"
+!echo "Testing"
+!cp $TSRC_1/image_02/data/*09[0-9].png data/test/left/image_02/data/
+!cp $TSRC_2/image_02/data/*07[0-9].png data/test/left/image_02/data/
+!ls -l data/test/left/image_02/data/*.png | wc -l
+!echo "----------------------------------------------------------"

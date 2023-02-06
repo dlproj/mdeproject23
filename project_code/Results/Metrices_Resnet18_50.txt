@@ -1,0 +1,28 @@
+Metrices for Resnet-18 and Resnet-50:
+=====================================
+class args:
+  min_depth = np.min(gt_depths)
+  max_depth = np.max(gt_depths) #Jag:
+  split = 'kitti'
+  
+args.min_depth, args.max_depth, args.split, np.max(gt_depths)
+(4.790153755366662, 389.630358, 'kitti', 389.630358)
+
+-------------------------------------------------------------------------------------------------
+pred_disparities18 = np.load(Path(DISP18) / "disparities.npy")
+abs_rel,     sq_rel,        rms,    log_rms,     d1_all,         a1,         a2,         a3
+    0.8117,    26.3001,     34.149,      1.934,    100.000,      0.012,      0.027,      0.045
+pred_disparities18 = np.load(Path(DISP18) / "disparities_pp.npy")
+    0.8121,    26.3196,     34.159,      1.936,    100.000,      0.012,      0.027,      0.045
+-------------------------------------------------------------------------------------------------
+
+pred_disparities50 = np.load(Path(DISP50) / "disparities.npy")
+abs_rel,     sq_rel,        rms,    log_rms,     d1_all,         a1,         a2,         a3
+    0.8114,    26.3139,     34.157,      1.935,     99.848,      0.014,      0.028,      0.045
+pred_disparities50 = np.load(Path(DISP50) / "disparities_pp.npy")
+    0.8121,    26.3189,     34.159,      1.936,    100.000,      0.012,      0.027,      0.045
+================================================================================================================================================================
+
+Note:
+This metrics is for POC completion, since we trained with SampleDataSetup.txt
+Training the entire dataset requires huge resources.
