@@ -1,0 +1,18 @@
+Source files used from the repositories
+---------------------------------------
+OniroAI/MonoDepth-PyTorch:-
+1. Monodepth.ipynb
+2. README-PyTorch.md
+3. data_loader.py
+4. file_list.txt
+5. kitti_archives_to_download.txt
+6. loss.py
+7. main_monodepth_pytorch.py
+8. models_resnet.py
+9. transforms.py
+10. utils.py
+
+mrharicot/monodepth:-
+1. evaluation_utils.py
+2. evaluate_kitti.py
+---------------------------------------
